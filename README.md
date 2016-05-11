@@ -260,6 +260,12 @@ eval $(carina env yourclustername)
 
 TODO.
 
+Man-in-the-middle proxies replace server certificates from every site visited  for a "forged" certificate. They get away with this because corporate IT configures every browser to trust the root CA of these forged certificates.
+
+I have not tested it yet, but AFAIK this is just the case of replacing the step "Get the root CA" for another simple step quite similar: "Get the root CA for forged proxy certificates".
+
+This is done *inside* your work network, by opening any HTTPS URL in your browser. The root CA for every single HTTPS site will be the same and owned by your IT. You can export it the same way (this is a public key, do not worry) and save it to "ca.domain.cer" as well (and follow the same steps afterwards). A colleague could mail it to you.
+
 ### Build arguments
 
 If you want to build this image yourself you can set the variables BASEREPO and EPELREPO before running `build.sh` in order to choose a specific "yum mirror" from your local network. Running local builds becomes a lot faster with a mirror around.
