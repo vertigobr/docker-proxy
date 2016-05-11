@@ -258,7 +258,7 @@ eval $(carina env yourclustername)
 
 ### Man-in-the-middle Proxies
 
-TODO
+TODO.
 
 ### Build arguments
 
