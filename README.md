@@ -1,6 +1,8 @@
 Docker Proxy (Carina)
 =======
 
+[![Build Status](http://drone.vertigo.com.br/api/badges/vertigobr/docker-proxy/status.svg)](http://drone.vertigo.com.br/vertigobr/docker-proxy)
+
 This container allows a Docker client (the very native one) to connect to a remote Docker engine with a restrictive HTTP proxy between them. This is a common situation for Carina corporate to-be customers.
 
 This image is based on `vertigo/lets-nginx` (wich is itself based on previous work from `smashwilson/lets-nginx`). This means it will automagically generate its SSL certificate using letsencrypt.
