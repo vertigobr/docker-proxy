@@ -260,11 +260,17 @@ eval $(carina env yourclustername)
 
 TODO.
 
+*I am wrong below. Man-in-the-middle proxies seem to "drop" the client certificate. I wish I had more time to sort this out, but I don't think there is any way around this without cooperation of the proxy dudes.*
+
 Man-in-the-middle proxies replace server certificates from every site visited  for a "forged" certificate. They get away with this because corporate IT configures every browser to trust the root CA of these forged certificates.
 
 I have not tested it yet, but AFAIK this is just the case of replacing the step "Get the root CA" for another simple step quite similar: "Get the root CA for forged proxy certificates".
 
 This is done *inside* your work network, by opening any HTTPS URL in your browser. The root CA for every single HTTPS site will be the same and owned by your IT. You can export it the same way (this is a public key, do not worry) and save it to "ca.domain.cer" as well (and follow the same steps afterwards). A colleague could mail it to you.
+
+The only point of doubt (I'll check it out as soon as I can) if that Docker client isn't proxy-friendly (like Carina CLI is, for it accepts "http[s]_proxy" environment variables), so unless the proxy is transparent to it we'll have a problem.
+
+Gonna run some checks on this...
 
 ### Build arguments
 
